@@ -1,9 +1,9 @@
 const db = require("../models");
-const Weapon = db.tutorials;
+const Weapon = db.weapons;
 
 // Create and Save a new Weapon
 exports.create = (req, res) => {
-    if (!req.body.title) {
+    if (!req.body.name) {
         res.status(400).send({ message: "Content cannot be empty" });
         return;
     }
@@ -19,6 +19,8 @@ exports.create = (req, res) => {
         hands: req.body.hands,
         cost: req.body.cost
     });
+
+    console.log("about to save")
 
     weapon
         .save(weapon)
@@ -98,7 +100,7 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    Tutorial.findByIdAndRemove(id)
+    Weapon.findByIdAndRemove(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({
@@ -112,7 +114,7 @@ exports.delete = (req, res) => {
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete Tutorial with id=${id}`
+                message: `Could not delete weapon with id=${id}`
             });
         });
 };
