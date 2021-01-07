@@ -21,7 +21,7 @@ module.exports = app => {
     // Delete a Weapon with id
     router.delete("/:id", weapons.delete);
   
-    // Create a new Weapon
+    // Delete all weapons
     router.delete("/", weapons.deleteAll);
   
     app.use('/api/weapons', router);
