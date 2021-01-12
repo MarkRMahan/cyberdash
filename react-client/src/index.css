@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Play&display=swap");
+
+.background {
+  background-color: #131516;
+  color: whitesmoke;
+}
+
+div {
+  font-family: Play;
+}

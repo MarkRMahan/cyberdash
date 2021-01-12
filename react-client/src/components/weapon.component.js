@@ -154,14 +154,14 @@ export default class Weapon extends Component {
             {currentWeapon.published ? (
               <button
                 className="badge badge-primary mr-2"
-                onClick={() => this.updatePublished(false)}
+                onClick={() => this.updateConcealable(false)}
               >
                 UnPublish
               </button>
             ) : (
               <button
                 className="badge badge-primary mr-2"
-                onClick={() => this.updatePublished(true)}
+                onClick={() => this.updateConcealable(true)}
               >
                 Publish
               </button>

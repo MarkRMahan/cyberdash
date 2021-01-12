@@ -18,7 +18,7 @@
     "npm": "3.0.0"
   },
   "scripts": {
-    "client": "cd react-crud && npm start",
+    "client": "cd react-client && npm start",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
