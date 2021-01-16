@@ -54,22 +54,40 @@ exports.findAll = (req, res) => {
 
 // Find a single Weapon with an id
 exports.findOne = (req, res) => {
-    const id = req.params.id;
+  const id = req.params.id;
 
-    Weapon.findById(id)
-        .then(data => {
-            if (!data) {
-                res.status(404).send({ message: `No weapon with id=${id} found.`});
-            } else {
-                res.send(data);
-            }
-        })
-        .catch(err => {
-            res
-                .status(500)
-                .send({ message: `Error retrieving weapon with id=${id}`});
-        });
+  Weapon.findById(id)
+      .then(data => {
+          if (!data) {
+              res.status(404).send({ message: `No weapon with id=${id} found.`});
+          } else {
+              res.send(data);
+          }
+      })
+      .catch(err => {
+          res
+              .status(500)
+              .send({ message: `Error retrieving weapon with id=${id}`});
+      });
 };
+
+exports.findWeaponByName = (req, res) => {
+  const name = req.params.name;
+  
+  Weapon.find( {name: new RegExp(`.${name}.`) })
+    .then(data => {
+      if (!data) {
+        res.status(404).send({ message: `No weapons found`});
+      } else {
+        res.send(data);
+      }
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .send({ message: `Error finding weapon with name input: ${name}`});
+    });
+}
 
 // Update a Weapon by the id in the request
 exports.update = (req, res) => {

@@ -14,6 +14,9 @@ module.exports = app => {
   
     // Retrieve a single Weapon with id
     router.get("/:id", weapons.findOne);
+
+    // Retrieve weapons by name
+    router.get("/:name", weapons.findWeaponByName);
   
     // Update a Weapon with id
     router.put("/:id", weapons.update);

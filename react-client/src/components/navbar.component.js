@@ -10,11 +10,6 @@ const NavBar = () => {
             Weapons
           </a>
         </li>
-        <li className="nav-item">
-          <a href="/add" className="nav-link">
-            Add
-          </a>
-        </li>
       </div>
     </nav>
   );

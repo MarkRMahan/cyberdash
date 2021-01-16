@@ -127,50 +127,9 @@ export default class WeaponsList extends Component {
                 </li>
               ))}
           </ul>
-
-          <button
-            className="m-3 btn btn-sm btn-danger"
-            onClick={this.removeAllWeapons}
-          >
-            Remove All
-          </button>
         </div>
         <div className="col-md-6">
-          {currentWeapon ? (
-            <div>
-              <h4>Weapon</h4>
-              <div>
-                <label>
-                  <strong>Name:</strong>
-                </label>{" "}
-                {currentWeapon.name}
-              </div>
-              <div>
-                <label>
-                  <strong>Description:</strong>
-                </label>{" "}
-                {currentWeapon.description}
-              </div>
-              <div>
-                <label>
-                  <strong>Status:</strong>
-                </label>{" "}
-                {currentWeapon.published ? "Published" : "Pending"}
-              </div>
-
-              <Link
-                to={"/weapons/" + currentWeapon.id}
-                className="badge badge-warning"
-              >
-                Edit
-              </Link>
-            </div>
-          ) : (
-            <div>
-              <br />
-              <p>Please click on a Weapon...</p>
-            </div>
-          )}
+          Example Column
         </div>
       </div>
     );

@@ -18,7 +18,7 @@ class App extends Component {
         <div className="container mt-3">
           <Switch>
           <Route exact path={["/", "/weapons"]} component={WeaponsList} />
-          <Route exact path="/add" component={AddWeapon} />
+          {/* <Route exact path="/add" component={AddWeapon} /> */}
           <Route path="/weapons/:id" component={Weapon} />
           </Switch>
         </div> 

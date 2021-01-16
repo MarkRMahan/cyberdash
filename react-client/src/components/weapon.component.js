@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 import WeaponDataService from "../services/weapon.service";
 
 export default class Weapon extends Component {
@@ -13,10 +14,16 @@ export default class Weapon extends Component {
 
     this.state = {
       currentWeapon: {
-        id: null,
         name: "",
         description: "",
-        published: false
+        type: "",
+        skill: "",
+        concealable: false,
+        damage: "",
+        magazine: 0,
+        rof: 0,
+        hands: 0,
+        cost: 0
       },
       message: ""
     };
@@ -118,77 +125,7 @@ export default class Weapon extends Component {
 
     return (
       <div>
-        {currentWeapon ? (
-          <div className="edit-form">
-            <h4>Weapon</h4>
-            <form>
-              <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="name"
-                  value={currentWeapon.name}
-                  onChange={this.onChangeName}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="description">Description</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="description"
-                  value={currentWeapon.description}
-                  onChange={this.onChangeDescription}
-                />
-              </div>
-
-              <div className="form-group">
-                <label>
-                  <strong>Status:</strong>
-                </label>
-                {currentWeapon.published ? "Published" : "Pending"}
-              </div>
-            </form>
-
-            {currentWeapon.published ? (
-              <button
-                className="badge badge-primary mr-2"
-                onClick={() => this.updateConcealable(false)}
-              >
-                UnPublish
-              </button>
-            ) : (
-              <button
-                className="badge badge-primary mr-2"
-                onClick={() => this.updateConcealable(true)}
-              >
-                Publish
-              </button>
-            )}
-
-            <button
-              className="badge badge-danger mr-2"
-              onClick={this.deleteWeapon}
-            >
-              Delete
-            </button>
-
-            <button
-              type="submit"
-              className="badge badge-success"
-              onClick={this.updateWeapon}
-            >
-              Update
-            </button>
-            <p>{this.state.message}</p>
-          </div>
-        ) : (
-          <div>
-            <br />
-            <p>Please click on a Weapon...</p>
-          </div>
-        )}
+        A weapon
       </div>
     );
   }
