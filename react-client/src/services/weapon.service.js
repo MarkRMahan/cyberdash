@@ -1,32 +1,32 @@
-import http from "../http-common";
+import getData from "../http-common";
 
 class WeaponDataService {
   getAll() {
-    return http.get("/weapons");
+    return getData("/weapons");
   }
 
   get(id) {
-    return http.get(`/weapons/${id}`);
+    return getData(`/weapons/${id}`);
   }
 
-  create(data) {
-    return http.post("/weapons", data);
-  }
+  // create(data) {
+  //   return http.post("/weapons", data);
+  // }
 
-  update(id, data) {
-    return http.put(`/weapons/${id}`, data);
-  }
+  // update(id, data) {
+  //   return http.put(`/weapons/${id}`, data);
+  // }
 
-  delete(id) {
-    return http.delete(`/weapons/${id}`);
-  }
+  // delete(id) {
+  //   return http.delete(`/weapons/${id}`);
+  // }
 
-  deleteAll() {
-    return http.delete(`/weapons`);
-  }
+  // deleteAll() {
+  //   return http.delete(`/weapons`);
+  // }
 
   findByName(name) {
-    return http.get(`/weapons?name=${name}`);
+    return getData(`/weapons/findWeaponByName/${name}`);
   }
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import WeaponDataService from "../services/weapon.service";
 import { Link } from "react-router-dom";
+import Weapon from "./weapon.component"
 
 export default class WeaponsList extends Component {
   constructor(props) {
@@ -74,13 +75,14 @@ export default class WeaponsList extends Component {
   searchName() {
     WeaponDataService.findByName(this.state.searchName)
       .then(response => {
+        console.log(response)
         this.setState({
           weapons: response.data
         });
         console.log(response.data);
       })
       .catch(e => {
-        console.log(e);
+        console.log(`Error receiving weapon: ${e}`);
       });
   }
 
@@ -112,8 +114,14 @@ export default class WeaponsList extends Component {
         <div className="col-md-6">
           <h4>Weapons List</h4>
 
+          <div>
+            {this.state.weapons.map((weapon, i) => <Weapon name = {i}
+                weapons = {weapon} />)}
+          </div>
+
           <ul className="list-group">
-            {weapons &&
+
+            {/* {weapons &&
               weapons.map((weapon, index) => (
                 <li
                   className={
@@ -125,7 +133,7 @@ export default class WeaponsList extends Component {
                 >
                   {weapon.name}
                 </li>
-              ))}
+              ))} */}
           </ul>
         </div>
         <div className="col-md-6">

@@ -56,6 +56,8 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
+  console.log("ENTERED ONE");
+
   Weapon.findById(id)
       .then(data => {
           if (!data) {
@@ -73,8 +75,10 @@ exports.findOne = (req, res) => {
 
 exports.findWeaponByName = (req, res) => {
   const name = req.params.name;
+
+  console.log("ENTERED NAME");
   
-  Weapon.find( {name: new RegExp(`.${name}.`) })
+  Weapon.find( {name: new RegExp(`.*${name}.*`, 'i') })
     .then(data => {
       if (!data) {
         res.status(404).send({ message: `No weapons found`});

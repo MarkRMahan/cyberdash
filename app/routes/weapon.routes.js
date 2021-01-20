@@ -13,10 +13,10 @@ module.exports = app => {
     router.get("/concealable", weapons.findAllConcealable);
   
     // Retrieve a single Weapon with id
-    router.get("/:id", weapons.findOne);
+    router.get("/findWeaponById/:id", weapons.findOne);
 
     // Retrieve weapons by name
-    router.get("/:name", weapons.findWeaponByName);
+    router.get("/findWeaponByName/:name", weapons.findWeaponByName);
   
     // Update a Weapon with id
     router.put("/:id", weapons.update);

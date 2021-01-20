@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from 'axios';
 import WeaponDataService from "../services/weapon.service";
 
 export default class Weapon extends Component {
@@ -125,7 +124,7 @@ export default class Weapon extends Component {
 
     return (
       <div>
-        A weapon
+        {this.props.weapons.name}
       </div>
     );
   }

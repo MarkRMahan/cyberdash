@@ -6,6 +6,6 @@ mongoose.Promise = global.Promise;
 const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
-db.weapons = require("./weapon.model.js")(mongoose);
+db.weapons = require("./weapon.model.js");
 
 module.exports = db;

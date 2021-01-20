@@ -17,7 +17,7 @@ const schema = mongoose.Schema(
     { timestamps: false }
 );
 
-schema.plugin(mongoosePaginate);
+//schema.plugin(mongoosePaginate);
 
 const weapon = mongoose.model("weapon", schema);
 
