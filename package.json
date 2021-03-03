@@ -20,7 +20,9 @@
   "scripts": {
     "client": "cd react-client && npm start",
     "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "debug_server": "nodemon --inspect server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "debug": "concurrently --kill-others-on-fail \"npm run debug_server\" \"npm run client\""
   },
   "main": "server.js",
   "devDependencies": {},

@@ -28,10 +28,6 @@ export default class Weapon extends Component {
     };
   }
 
-  componentDidMount() {
-    this.getWeapon(this.props.match.params.id);
-  }
-
   onChangeName(e) {
     const name = e.target.value;
 
@@ -124,7 +120,15 @@ export default class Weapon extends Component {
 
     return (
       <div>
-        {this.props.weapons.name}
+        <span>
+          {this.props.weapons.name}
+        </span>
+        <div>
+          <span>Description:</span>
+          <div>
+            {this.props.weapons.description}
+          </div>
+        </div>
       </div>
     );
   }

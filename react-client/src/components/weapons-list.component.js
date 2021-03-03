@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import WeaponDataService from "../services/weapon.service";
-import { Link } from "react-router-dom";
 import Weapon from "./weapon.component"
 
 export default class WeaponsList extends Component {
   constructor(props) {
     super(props);
     this.onChangeSearchName = this.onChangeSearchName.bind(this);
-    this.retrieveWeapons = this.retrieveWeapons.bind(this);
-    this.refreshList = this.refreshList.bind(this);
+    //this.retrieveWeapons = this.retrieveWeapons.bind(this);
+    //this.refreshList = this.refreshList.bind(this);
     this.setActiveWeapon = this.setActiveWeapon.bind(this);
     this.removeAllWeapons = this.removeAllWeapons.bind(this);
     this.searchName = this.searchName.bind(this);
@@ -21,9 +20,9 @@ export default class WeaponsList extends Component {
     };
   }
 
-  componentDidMount() {
-    this.retrieveWeapons();
-  }
+  // componentDidMount() {
+  //   this.retrieveWeapons();
+  // }
 
   onChangeSearchName(e) {
     const searchName = e.target.value;
@@ -33,26 +32,26 @@ export default class WeaponsList extends Component {
     });
   }
 
-  retrieveWeapons() {
-    WeaponDataService.getAll()
-      .then(response => {
-        this.setState({
-          weapons: response.data
-        });
-        console.log(response.data);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-  }
+  // retrieveWeapons() {
+  //   WeaponDataService.getAll()
+  //     .then(response => {
+  //       this.setState({
+  //         weapons: response.data
+  //       });
+  //       console.log(response.data);
+  //     })
+  //     .catch(e => {
+  //       console.log(e);
+  //     });
+  // }
 
-  refreshList() {
-    this.retrieveWeapons();
-    this.setState({
-      currentWeapon: null,
-      currentIndex: -1
-    });
-  }
+  // refreshList() {
+  //   this.retrieveWeapons();
+  //   this.setState({
+  //     currentWeapon: null,
+  //     currentIndex: -1
+  //   });
+  // }
 
   setActiveWeapon(weapon, index) {
     this.setState({
@@ -75,11 +74,15 @@ export default class WeaponsList extends Component {
   searchName() {
     WeaponDataService.findByName(this.state.searchName)
       .then(response => {
-        console.log(response)
-        this.setState({
-          weapons: response.data
-        });
-        console.log(response.data);
+        for (let weaponKey in response) {
+          console.log(`wList retrieved: ${JSON.stringify(response[weaponKey], null, 4)}`);
+        }
+        if (response.length) {
+          this.setState({
+            weapons: response
+          });
+          console.log(JSON.stringify(this.state.weapons, null, 4));
+        }
       })
       .catch(e => {
         console.log(`Error receiving weapon: ${e}`);

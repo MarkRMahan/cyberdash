@@ -7,17 +7,24 @@ export default async function getData(additionalUrl = '', data) {
 
   let reqBody = {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
-    mode: 'no-cors', // no-cors, *cors, same-origin
-    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    mode: 'cors', // no-cors, *cors, same-origin
     //credentials: 'same-origin', // include, *same-origin, omit
     headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data), // body data type must match "Content-Type" header
-    referrerPolicy: 'no-referrer' // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
   };
 
-  const response = await fetch(`${originalUrl}${additionalUrl}`, reqBody);
+  const fullUrl = `${originalUrl}${additionalUrl}`;
 
-  return response.json(); // parses JSON response into native JavaScript objects
+  console.log(`Full url: ${fullUrl}`);
+
+  let plsWork = await fetch(fullUrl, reqBody)
+  .then(response => response.json())
+  .then(data => {
+    return data;
+  });
+
+  return plsWork;
+
 }

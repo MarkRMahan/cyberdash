@@ -6,7 +6,8 @@ const db = require("./app/models");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  methods: 'GET, POST, PATCH, DELETE, OPTIONS',
+  origin: "http://localhost:5000"
 };
 
 app.use(cors(corsOptions));
