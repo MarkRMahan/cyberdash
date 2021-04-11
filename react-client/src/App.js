@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/js/dist/collapse";
+import "./app.css";
 
 import AddWeapon from "./components/add-weapon.component";
 import Tabs from "./components/tabs.component";

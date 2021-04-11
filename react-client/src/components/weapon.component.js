@@ -15,14 +15,18 @@ export default class Weapon extends Component {
       currentWeapon: {
         name: "",
         description: "",
+        nationality: "",
         type: "",
+        damage: "",
+        rof: 0,
+        magazine: 0,
         skill: "",
         concealable: false,
-        damage: "",
-        magazine: 0,
-        rof: 0,
+        attachments: "",
         hands: 0,
-        cost: 0
+        cost: 0,
+        quality: "",
+        body_min: 0
       },
       message: ""
     };
@@ -115,18 +119,32 @@ export default class Weapon extends Component {
       });
   }
 
+  showInfo() {
+    document.getElementById("weapon-info").addEventListener("click", (e) => {
+      if (e.target && e.target.matches("#weapon-info")) {
+
+      }
+    });
+  }
+
   render() {
     const { currentWeapon } = this.state;
-
+    // use clip-path
     return (
-      <div>
-        <span>
-          {this.props.weapons.name}
-        </span>
-        <div>
-          <span>Description:</span>
-          <div>
-            {this.props.weapons.description}
+      <div className="card" id="weapon-info">
+        <div className="card-header" id="weapon-heading">
+          <h2 className="mb-0">
+            <button className="btn btn-link" type="button" data-toggle="collapse" data-target="#weaponI" aria-expanded="true">
+              {this.props.weapons.name}
+            </button>
+          </h2>
+        </div>
+        <div id="weaponI" className="collapse" aria-labelledby="weapon-heading" data-parent="#weapon-accordion">
+          <div className="card-body">
+            <p>
+              <span>Description: </span>
+              {this.props.weapons.description}
+            </p>
           </div>
         </div>
       </div>

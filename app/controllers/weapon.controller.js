@@ -8,24 +8,51 @@ exports.create = (req, res) => {
         return;
     }
 
+    if (req.body.concealable === "true") {
+      req.body.concealable = true;
+    } else if (req.body.concealable === "false") {
+      req.body.concealable = false;
+    }
+
+    if (typeof(req.body.concealable) === 'string') {
+      req.body.concealable = true;
+    }
+
+    if (typeof(req.body.cost) === "string") {
+      try {
+        let ebCost = req.body.cost.split(' ')[0];
+        ebCost = ebCost.substring(0, ebCost.length - 2); // Removes 'eb' off of the end
+        req.body.cost = parseInt(ebCost);
+      } catch (err) {
+        console.log(`Error formatting the cost of weapon with name ${req.body.name}. Setting cost to 0.`);
+        req.body.cost = 0;
+      }
+    }
+
     const weapon = new Weapon ({
         name: req.body.name,
         description: req.body.description || "",
+        nationality: req.body.nationality || "", 
         type: req.body.type,
-        concealable: req.body.concealable || false,
         damage: req.body.damage,
-        magazine: req.body.magazine,
-        rof: req.body.rof,
+        rof: parseInt(req.body.rof),
+        magazine: parseInt(req.body.magazine),
+        skill: req.body.skill || "",
+        concealable: req.body.concealable || false,
+        attachments: req.body.special || "",
         hands: req.body.hands,
-        cost: req.body.cost
+        cost: req.body.cost,
+        quality: req.body.quality || "Standard",
+        body_min: req.body.body_min ? parseInt(req.body.body_min) : 0
     });
-
-    console.log("about to save")
 
     weapon
         .save(weapon)
         .then(data => {
             res.send(data)
+        })
+        .then(weapon => {
+          console.log(`Weapon with name ${weapon.name} created.`)
         })
         .catch(err => {
             res.status(500).send({

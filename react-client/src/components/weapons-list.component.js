@@ -114,33 +114,14 @@ export default class WeaponsList extends Component {
             </div>
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-12">
           <h4>Weapons List</h4>
 
-          <div>
+          <div className="accordion" id="weapon-accordion">
             {this.state.weapons.map((weapon, i) => <Weapon name = {i}
                 weapons = {weapon} />)}
           </div>
-
-          <ul className="list-group">
-
-            {/* {weapons &&
-              weapons.map((weapon, index) => (
-                <li
-                  className={
-                    "list-group-item " +
-                    (index === currentIndex ? "active" : "")
-                  }
-                  onClick={() => this.setActiveWeapon(weapon, index)}
-                  key={index}
-                >
-                  {weapon.name}
-                </li>
-              ))} */}
-          </ul>
-        </div>
-        <div className="col-md-6">
-          Example Column
+          
         </div>
       </div>
     );
