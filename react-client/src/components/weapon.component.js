@@ -32,6 +32,7 @@ export default class Weapon extends Component {
     };
   }
 
+
   onChangeName(e) {
     const name = e.target.value;
 
@@ -129,17 +130,18 @@ export default class Weapon extends Component {
 
   render() {
     const { currentWeapon } = this.state;
+    const hyphenName = this.props.weapons.name.replaceAll(" ", "-");
     // use clip-path
     return (
-      <div className="card" id="weapon-info">
-        <div className="card-header" id="weapon-heading">
+      <div className="card weapon-info">
+        <div className="card-header" id={`${hyphenName}-heading`}>
           <h2 className="mb-0">
-            <button className="btn btn-link" type="button" data-toggle="collapse" data-target="#weaponI" aria-expanded="true">
+            <button className="btn btn-link" type="button" data-toggle="collapse" data-target={`#${hyphenName}`} aria-expanded="true">
               {this.props.weapons.name}
             </button>
           </h2>
         </div>
-        <div id="weaponI" className="collapse" aria-labelledby="weapon-heading" data-parent="#weapon-accordion">
+        <div id={hyphenName} className="collapse" aria-labelledby={`${hyphenName}-heading`}>
           <div className="card-body">
             <p>
               <span>Description: </span>
