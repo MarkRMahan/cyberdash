@@ -88,6 +88,26 @@ ul {
   border-width: 1px 1px 0 1px;
 }
 
+.card.weapon-card {
+  color: rgb(177, 222, 226);
+  background-color: #131516;
+  border: 1px solid rgb(177, 222, 226);
+}
+
+.btn.weapon-btn {
+  color: rgb(177, 222, 226);
+}
+
+.weapon-row {
+  margin: 0rem 2rem 1rem 2rem;
+}
+
+.weapon-description {
+  margin-top: 3rem;
+}
+
+
+
 /* .clearfix {
   overflow:auto;
 } */

@@ -128,25 +128,71 @@ export default class Weapon extends Component {
     });
   }
 
+  // name: "",
+  // description: "",
+  // nationality: "",
+  // type: "",
+  // damage: "",
+  // rof: 0,
+  // magazine: 0,
+  // skill: "",
+  // concealable: false,
+  // attachments: "",
+  // hands: 0,
+  // cost: 0,
+  // quality: "",
+  // body_min: 0
+
   render() {
     const { currentWeapon } = this.state;
-    const hyphenName = this.props.weapons.name.replaceAll(" ", "-");
+    const hyphenName = this.props.weapons.name.replaceAll(" ", "-").replaceAll("\"", "");
     // use clip-path
     return (
-      <div className="card weapon-info">
+      <div className="card weapon-card weapon-info">
         <div className="card-header" id={`${hyphenName}-heading`}>
           <h2 className="mb-0">
-            <button className="btn btn-link" type="button" data-toggle="collapse" data-target={`#${hyphenName}`} aria-expanded="true">
+            <button className="btn weapon-btn" type="button" data-toggle="collapse" data-target={`#${hyphenName}`} aria-expanded="true">
               {this.props.weapons.name}
             </button>
           </h2>
         </div>
         <div id={hyphenName} className="collapse" aria-labelledby={`${hyphenName}-heading`}>
           <div className="card-body">
-            <p>
-              <span>Description: </span>
-              {this.props.weapons.description}
-            </p>
+            <div className="row weapon-row">
+              <div className="col-md-3">
+                <span>Type: {this.props.weapons.type}</span>
+              </div>
+              <div className="col-md-3">
+                <span>Damage: {this.props.weapons.damage}</span>
+              </div>
+              <div className="col-md-3">
+                <span>Rate of Fire: {this.props.weapons.rof}</span>
+              </div>
+              <div className="col-md-3">
+                <span>Nationality: {this.props.weapons.nationality}</span>
+              </div>
+            </div>
+            <div className="row weapon-row">
+              <div className="col-md-3">
+                <span>Magazine: {this.props.weapons.magazine}</span>
+              </div>
+              <div className="col-md-3">
+                <span>Skill: {this.props.weapons.skill}</span>
+              </div>
+              <div className="col-md-3">
+                <span>Concealable: {this.props.weapons.concealable}</span>
+              </div>
+              <div className="col-md-3">
+                <span>Cost: {this.props.weapons.cost}eb</span>
+              </div>
+            </div>
+            <div className="row weapon-description">
+              <div className="col-md-8">
+                  <p>
+                    <span>Description: {this.props.weapons.description}</span>
+                  </p>
+                </div>
+            </div>
           </div>
         </div>
       </div>

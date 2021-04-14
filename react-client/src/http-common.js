@@ -17,8 +17,6 @@ export default async function getData(additionalUrl = '', data) {
 
   const fullUrl = `${originalUrl}${additionalUrl}`;
 
-  console.log(`Full url: ${fullUrl}`);
-
   let plsWork = await fetch(fullUrl, reqBody)
   .then(response => response.json())
   .then(data => {

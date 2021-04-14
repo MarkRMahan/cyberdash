@@ -114,12 +114,16 @@ export default class WeaponsList extends Component {
             </div>
           </div>
         </div>
-        <div className="col-md-12">
-          <h4>Weapons List</h4>
+        <div className="col-md-12" key="hmm">
 
-          <div className="accordion" id="weapon-accordion">
-            {this.state.weapons.map((weapon, i) => <Weapon name = {i}
-                weapons = {weapon} />)}
+          <h4 key="fake">Weapons</h4>
+
+          <div className="accordion" id="weapon-accordion" key="fake-key">
+            {this.state.weapons.map((weapon, i) => (
+              <div key={`weapon-${i}`}>
+                <Weapon name = {i} weapons = {weapon} />
+              </div>
+            ))}
           </div>
           
         </div>
