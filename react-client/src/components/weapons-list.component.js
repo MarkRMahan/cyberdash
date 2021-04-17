@@ -11,6 +11,7 @@ export default class WeaponsList extends Component {
     this.setActiveWeapon = this.setActiveWeapon.bind(this);
     this.removeAllWeapons = this.removeAllWeapons.bind(this);
     this.searchName = this.searchName.bind(this);
+    this.randomWeapon = this.randomWeapon.bind(this);
 
     this.state = {
       weapons: [],
@@ -89,6 +90,19 @@ export default class WeaponsList extends Component {
       });
   }
 
+  randomWeapon() {
+    WeaponDataService.getRandomWeapon()
+      .then(response => {
+        console.log(response);
+        this.setState({
+          weapons: response
+        });
+      })
+      .catch(e => {
+        console.log(`Error finding random weapon: ${e}`)
+      });
+  }
+
   render() {
     const { searchName, weapons, currentWeapon, currentIndex } = this.state;
 
@@ -110,6 +124,13 @@ export default class WeaponsList extends Component {
                 onClick={this.searchName}
               >
                 Search
+              </button>
+              <button
+                className="btn btn-outline-secondary"
+                type="button"
+                onClick={this.randomWeapon}
+              >
+                Random Weapon
               </button>
             </div>
           </div>

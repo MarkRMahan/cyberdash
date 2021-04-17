@@ -17,7 +17,7 @@ class App extends Component {
 
         <NavBar />
 
-        <div className="container mt-3 main-page">
+        <div className="mt-3 main-page">
           <Switch>
           <Route exact path={["/", "/weapons"]} component={WeaponsList} />
           {/* <Route exact path="/add" component={AddWeapon} /> */}

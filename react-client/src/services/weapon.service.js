@@ -25,6 +25,10 @@ class WeaponDataService {
   //   return http.delete(`/weapons`);
   // }
 
+  getRandomWeapon() {
+    return getData(`/weapons/getRandomWeapon`);
+  }
+
   findByName(name) {
     return getData(`/weapons/findWeaponByName/${name}`);
   }

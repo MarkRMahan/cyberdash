@@ -17,6 +17,9 @@ module.exports = app => {
 
     // Retrieve weapons by name
     router.get("/findWeaponByName/:name", weapons.findWeaponByName);
+
+    // Retrieve a random weapon
+    router.get("/getRandomWeapon", weapons.getRandomWeapon);
   
     // Update a Weapon with id
     router.put("/:id", weapons.update);

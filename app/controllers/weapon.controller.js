@@ -110,14 +110,31 @@ exports.findWeaponByName = (req, res) => {
       if (!data) {
         res.status(404).send({ message: `No weapons found`});
       } else {
-        console.log("Sending data")
+        console.log("Sending data");
         res.send(data);
       }
     })
     .catch(err => {
       res
         .status(500)
-        .send({ message: `Error finding weapon with name input: ${name}`});
+        .send({ message: `Error finding weapon with name ${name}: ${err}`});
+    });
+}
+
+exports.getRandomWeapon = (req, res) => {
+  Weapon.aggregate([{ $sample: { size: 1 } }])
+    .then(data => {
+      if (!data) {
+        res.status(404).send({ message: `No weapons found.  Are there weapons in the DB?`});
+      } else {
+        console.log("Random weapon found");
+        res.send(data);
+      }
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .send({ message: `Error grabbing random weapon: ${err}`});
     });
 }
 

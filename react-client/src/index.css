@@ -68,6 +68,9 @@ ul {
 
 .main-page {
   overflow: auto;
+  width: 60rem;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .tab-list {
