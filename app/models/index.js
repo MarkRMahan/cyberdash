@@ -7,5 +7,6 @@ const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
 db.weapons = require("./weapon.model.js");
+db.images = require("./image.model.js");
 
 module.exports = db;

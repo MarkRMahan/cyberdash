@@ -1,7 +1,7 @@
 module.exports = app => {
     const weapons = require("../controllers/weapon.controller.js");
   
-    var router = require("express").Router();
+    const router = require("express").Router();
   
     // Create a new Weapon
     router.post("/", weapons.create);

@@ -145,7 +145,7 @@ export default class Weapon extends Component {
 
   render() {
     const { currentWeapon } = this.state;
-    const hyphenName = this.props.weapons.name.replaceAll(" ", "-").replaceAll("\"", "");
+    const hyphenName = this.props.weapons.name.replaceAll(/[ ]|[!$%^&*()_+|~={}\[\]:";'<>?,.\/]/g, "-");
     // use clip-path
     return (
       <div className="card weapon-card weapon-info">
@@ -189,7 +189,7 @@ export default class Weapon extends Component {
             <div className="row weapon-description">
               <div className="col-md-8">
                   <p>
-                    <span>Description: {this.props.weapons.description}</span>
+                    <span>{this.props.weapons.description}</span>
                   </p>
                 </div>
             </div>

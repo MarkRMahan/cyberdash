@@ -95,7 +95,10 @@ export default class WeaponsList extends Component {
       .then(response => {
         console.log(response);
         this.setState({
-          weapons: response
+          weapons: [
+            ...response,
+            ...this.state.weapons
+          ]
         });
       })
       .catch(e => {

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Play&display=swap");
-/*Consider font style similar to the one named "Tomorrow"*/
+/* @import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow&display=swap'); */
 
 body::before {
   content: " ";

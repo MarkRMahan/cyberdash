@@ -12,6 +12,11 @@ const NavBar = () => {
             Weapons
           </a>
         </li>
+        <li className="nav-item">
+          <a href="/nightcity" className="navbar-brand nav-option">
+            Night City
+          </a>
+        </li>
       </ul>
     </nav>
   );
