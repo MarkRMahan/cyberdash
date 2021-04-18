@@ -2,6 +2,7 @@ const db = require("../models");
 const Image = db.images;
 
 exports.createImg = (req, res) => {
+  console.log("Entered create image");
   if (!req.body.image) {
     res.status(400).send({ message: "Image connot be empty"});
   }
@@ -39,6 +40,8 @@ exports.createImg = (req, res) => {
 
 exports.findImageByName = (req, res) => {
   const imgName = req.params.name;
+
+  console.log("Image name");
 
   Image.find( {name: new RegExp(`.*${imgName}.*`, 'i') })
       .then(data => {
