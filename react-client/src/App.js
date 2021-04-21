@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="background">
-
+        <link rel="stylesheet" media="all" href="https://public-assets.envato-static.com/assets/market/pages/preview/index-004d35cdd5d555cdd3e956d1b916825642de06529f0fe91fd9f390813761d2fc.css" />
         <NavBar />
 
         <div className="mt-3 main-page">
