@@ -21,7 +21,7 @@ const NavBar = () => {
       <div className="outer-nav-art rounded-top">
         <svg xmlns="http://www.w3.org/2000/svg" width="0.266667in" height="10.6667in" viewBox="0 0 24 960" preserveAspectRatio="xMinYMid slice">
           <path id="Imported Path"
-                fill="#343a40" stroke="black" stroke-width="1"
+                fill="#343a40" stroke="black" strokeWidth="1"
                 d="M 24.00,952.00
                   C 24.00,952.00 24.00,800.00 24.00,800.00
                     24.00,800.00 24.00,792.00 24.00,792.00

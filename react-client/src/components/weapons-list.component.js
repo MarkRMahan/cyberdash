@@ -21,10 +21,6 @@ export default class WeaponsList extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.retrieveWeapons();
-  // }
-
   onChangeSearchName(e) {
     const searchName = e.target.value;
 
@@ -32,27 +28,6 @@ export default class WeaponsList extends Component {
       searchName: searchName
     });
   }
-
-  // retrieveWeapons() {
-  //   WeaponDataService.getAll()
-  //     .then(response => {
-  //       this.setState({
-  //         weapons: response.data
-  //       });
-  //       console.log(response.data);
-  //     })
-  //     .catch(e => {
-  //       console.log(e);
-  //     });
-  // }
-
-  // refreshList() {
-  //   this.retrieveWeapons();
-  //   this.setState({
-  //     currentWeapon: null,
-  //     currentIndex: -1
-  //   });
-  // }
 
   setActiveWeapon(weapon, index) {
     this.setState({
