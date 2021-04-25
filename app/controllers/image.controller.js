@@ -40,9 +40,7 @@ exports.createImg = (req, res) => {
 
 exports.findImageByName = (req, res) => {
   const imgName = req.params.name;
-
-  console.log("Image name");
-
+  
   Image.find( {name: new RegExp(`.*${imgName}.*`, 'i') })
       .then(data => {
           if (!data) {

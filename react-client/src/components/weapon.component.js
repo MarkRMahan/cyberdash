@@ -27,8 +27,7 @@ export default class Weapon extends Component {
         cost: 0,
         quality: "",
         body_min: 0
-      },
-      message: ""
+      }
     };
   }
 
