@@ -1,0 +1,59 @@
+.night-city-img {
+  width: 732px;
+  height: 910px;
+  object-fit: cover;
+}
+
+.img-container {
+  height: 100%;
+}
+
+.img-container svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nc-row {
+  z-index: -1;
+  height: 100%;
+  display: flex;
+}
+
+.nc-col {
+  position: relative;
+}
+
+.zone-hover-link {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  background-color: black;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+svg:not(:root) {
+  width: 27px;
+  height: 100%;
+  min-height: 100%;
+  display: block;
+  overflow: visible;
+  position: absolute;
+}
+
+.outer-nav-art {
+  position: relative;
+  background-color: #343a40;
+  display: flex;
+  max-width: 24px;
+  min-width: 24px;
+  height: 100%;
+  font-size: 0;
+  justify-content: space-between;
+}
+
+svg:not(:root) {
+  z-index: 3;
+}

@@ -85,46 +85,48 @@ export default class WeaponsList extends Component {
     const { searchName, weapons, currentWeapon, currentIndex } = this.state;
 
     return (
-      <div className="list row">
-        <div className="col-md-8">
-          <div className="input-group mb-3">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search by name"
-              value={searchName}
-              onChange={this.onChangeSearchName}
-            />
-            <div className="input-group-append">
-              <button
-                className="btn btn-outline-secondary"
-                type="button"
-                onClick={this.searchName}
-              >
-                Search
-              </button>
-              <button
-                className="btn btn-outline-secondary"
-                type="button"
-                onClick={this.randomWeapon}
-              >
-                Random Weapon
-              </button>
+      <div className="mt-3 main-page">
+        <div className="list row">
+          <div className="col-md-8">
+            <div className="input-group mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search by name"
+                value={searchName}
+                onChange={this.onChangeSearchName}
+              />
+              <div className="input-group-append">
+                <button
+                  className="btn btn-outline-secondary"
+                  type="button"
+                  onClick={this.searchName}
+                >
+                  Search
+                </button>
+                <button
+                  className="btn btn-outline-secondary"
+                  type="button"
+                  onClick={this.randomWeapon}
+                >
+                  Random Weapon
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col-md-12" key="hmm">
+          <div className="col-md-12" key="hmm">
 
-          <h4 key="fake">Weapons</h4>
+            <h4 key="fake">Weapons</h4>
 
-          <div className="accordion" id="weapon-accordion" key="fake-key">
-            {this.state.weapons.map((weapon, i) => (
-              <div key={`weapon-${i}`}>
-                <Weapon name = {i} weapons = {weapon} />
-              </div>
-            ))}
+            <div className="accordion" id="weapon-accordion" key="fake-key">
+              {this.state.weapons.map((weapon, i) => (
+                <div key={`weapon-${i}`}>
+                  <Weapon name = {i} weapons = {weapon} />
+                </div>
+              ))}
+            </div>
+            
           </div>
-          
         </div>
       </div>
     );

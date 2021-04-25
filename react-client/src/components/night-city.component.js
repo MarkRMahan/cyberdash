@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ImageDataService from "../services/image.service";
+import '../nightcity.css';
 
 export default class NightCityMap extends Component {
 
@@ -15,7 +16,6 @@ export default class NightCityMap extends Component {
   getImage(name) {
     ImageDataService.getImgByName(name)
       .then(response => {
-        console.log(`Response: ${JSON.stringify(response, null, 4)}`);
         if (response[0].image.data) {
           this.setState({ 
             nightCityDisplayImg: new Buffer(response[0].image.data).toString('base64')
@@ -27,18 +27,22 @@ export default class NightCityMap extends Component {
       });
   }
 
+  logToConsole() {
+    console.log("Clicked");
+  }
+
   hexToBase64(str) {
     return btoa(String.fromCharCode.apply(null, str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
   }
 
   render() {
     return (
-      <div className="row">
-        <div className="col-md-4">
-          Good morning Night City!
+      <div className="h-100 nc-row">
+        <div className="nc-col h-100 img-container">
+          <img src={`data:image/png;base64,${this.state.nightCityDisplayImg}`} className="night-city-img" useMap="#nightcitymap"/>
         </div>
-        <div className="col-md-8">
-          <img src={`data:image/png;base64,${this.state.nightCityDisplayImg}`} width="100%" height="100%"/>
+        <div className="nc-col">
+          Get this text on the right
         </div>
       </div>
     );
