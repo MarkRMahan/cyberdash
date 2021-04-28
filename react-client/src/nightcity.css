@@ -1,18 +1,11 @@
 .night-city-img {
-  height: 100vh;
-  object-fit: cover;
+  width: 100%;
 }
 
 .img-container {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.img-mapper-img, #img-mapper, .img-mapper-canvas {
-  height: 100vh !important;
-  width: auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nc-row {
