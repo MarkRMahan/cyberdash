@@ -8,10 +8,11 @@ export default class NightCityMap extends Component {
 
   constructor(props) {
     super(props);
-    this.nightCityImgName = "Night-City-Presentation.png";
+    this.nightCityImgName = "NightCityPresentation";
 
     this.state = {
-      nightCityDisplayImg: this.getImage(this.nightCityImgName)
+      nightcitypresentation: this.getImage(this.nightCityImgName),
+      watsondevelopment: this.getImage("WatsonDevelopment")
     };
   }
 
@@ -23,8 +24,8 @@ export default class NightCityMap extends Component {
     ImageDataService.getImgByName(name)
       .then(response => {
         if (response[0].image.data) {
-          this.setState({ 
-            nightCityDisplayImg: new Buffer(response[0].image.data).toString('base64')
+          this.setState({
+            [name.toLowerCase()]: new Buffer(response[0].image.data).toString('base64')
           });
         }
       })
@@ -69,20 +70,21 @@ export default class NightCityMap extends Component {
     return (
       <div className="h-100 nc-row">
         <div id="testModal">
+          <img src={`data:image/png;base64,${this.state.watsondevelopment}`}/>
           <span>THIS IS A TEST TO SEE THE MODAL</span>
           <span className="closeModal">&times;</span>
         </div>
         <div className="nc-col img-container">
           <div id="night-city-container">
-            <img src={`data:image/png;base64,${this.state.nightCityDisplayImg}`} className="night-city-img" useMap="#nightcitymap"/>
+            <img src={`data:image/png;base64,${this.state.nightcitypresentation}`} className="night-city-img" useMap="#nightcitymap"/>
             <map name="nightcitymap">
               <area alt="ExecutiveZone" href="#" coords="568,280,583,271,589,260,611,260,631,285,631,315,626,329,611,340,595,340,568,307,568,280" shape="poly"/>
-              <area alt="OpenRoadOne" href="#" coords="526,1,501,109,553,174,568,207,601,209,614,212,629,224,634,238,628,275,633,291,636,296,635,302,632,307,626,329,611,339,598,340,619,362,635,417,679,509,693,526,693,558,719,561,731,557,731,0" shape="poly"/>
-              <area alt="OpenRoadTwo" href="#" coords="731,615,718,636,705,676,694,785,682,825,658,864,637,885,610,904,586,909,732,909" shape="poly"/>
+              <area alt="TheOpenRoad" href="#" coords="526,1,501,109,553,174,568,207,601,209,614,212,629,224,634,238,628,275,633,291,636,296,635,302,632,307,626,329,611,339,598,340,619,362,635,417,679,509,693,526,693,558,719,561,731,557,731,0" shape="poly"/>
+              <area alt="TheReclaimedPerimeter" href="#" coords="731,615,718,636,705,676,694,785,682,825,658,864,637,885,610,904,586,909,732,909" shape="poly"/>
               <area alt="PacificaPlayground" href="#" coords="0,892,5,895,31,893,54,877,45,864,50,858,36,842,37,826,54,818,56,797,71,794,81,786,93,781,98,773,113,775,119,779,129,769,142,762,146,753,151,750,181,764,212,760,248,766,246,791,235,813,194,869,170,881,148,909,0,910" shape="poly"/>
               <area alt="HeywoodIndustrialZone" href="#" coords="395,698,465,734,540,643,484,586,446,625,433,651" shape="poly"/>
               <area alt="RanchoCoronado" href="#" coords="247,791,194,870,170,883,149,909,495,910,418,866,377,838,333,793,315,799" shape="poly"/>
-              <area alt="HeywoodSantoDomingo" href="#" coords="249,765,247,790,314,797,333,792,377,836,496,909,585,908,609,902,639,882,658,863,681,824,693,786,704,676,717,636,731,613,732,559,719,562,693,559,692,527,677,509,652,458,593,468,486,584,542,642,466,736,394,698,355,749,292,769" shape="poly"/>
+              <area alt="SantoDomingo" href="#" coords="249,765,247,790,314,797,333,792,377,836,496,909,585,908,609,902,639,882,658,863,681,824,693,786,704,676,717,636,731,613,732,559,719,562,693,559,692,527,677,509,652,458,593,468,486,584,542,642,466,736,394,698,355,749,292,769" shape="poly"/>
               <area alt="NewWestbrook" href="#" coords="594,468,654,458,633,415,619,363,567,305,568,281,584,270,588,261,610,261,626,276,634,240,628,224,614,213,603,209,571,209,551,172,501,108,525,1,331,1,347,61,348,96,343,139,380,154,393,156,408,169,418,187,418,204,432,231,452,259,463,275,480,287,491,306,499,326,510,338,515,346,519,379,514,388,512,399" shape="poly"/>
               <area alt="WatsonDevelopment" href="#" coords="330,1,346,61,347,99,342,139,343,176,337,204,322,216,308,238,245,227,207,210,193,205,176,187,177,160,176,150,166,147,164,136,155,113,152,105,145,96,140,83,132,77,124,39,114,36,94,12,84,10,76,0,148,1,215,31,228,53,279,42,284,15" shape="poly"/>
               <area alt="NorCalMilitaryBase" href="#" coords="150,1,216,31,229,52,278,41,283,15,330,1" shape="poly"/>
@@ -96,7 +98,7 @@ export default class NightCityMap extends Component {
               <area alt="TheGlen" href="#" coords="234,481,229,491,182,463,156,464,155,501,157,537,179,546,184,560,197,571,207,621,228,643,247,647,260,644,275,639,289,629,301,615,309,584,311,553,298,543,302,525,297,473,259,484" shape="poly"/>
               <area alt="LittleEurope" href="#" coords="22,423,85,428,86,437,184,440,188,386,201,351,206,348,209,336,214,331,219,279,209,274,198,273,153,289,134,288,123,281,108,293,92,301,80,299,74,305,66,305,57,310,54,318,46,319,30,325,22,332,14,347,27,364,23,370,54,401,22,407" shape="poly"/>
               <area alt="OldBankBlock" href="#" coords="285,414,329,356,343,360,391,398,398,416" shape="poly"/>
-              <area alt="OldMedCenter" href="#" coords="399,417,401,424,401,440,396,446,393,446,387,463,368,466,361,475,332,457,326,446,321,416" shape="poly"/>
+              <area alt="OldMedicalCenter" href="#" coords="399,417,401,424,401,440,396,446,393,446,387,463,368,466,361,475,332,457,326,446,321,416" shape="poly"/>
               <area alt="OldCorpCenter" href="#" coords="320,416,326,448,331,457,310,465,305,470,260,483,233,481,215,476,198,459,187,441,187,414" shape="poly"/>
               <area alt="OldCityCenter" href="#" coords="187,413,283,414,329,356,314,343,308,326,282,325,276,319,232,319,210,337,208,347,202,352,189,387" shape="poly"/>          
             </map>
