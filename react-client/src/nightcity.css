@@ -52,7 +52,7 @@ svg:not(:root) {
   z-index: 3;
 }
 
-#testModal {
+#nightCityZoneModal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 10; /* Sit on top */
@@ -64,6 +64,19 @@ svg:not(:root) {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+#modalImg {
+  width: auto;
+  height: 100%;
+  margin: auto;
+  padding: auto;
+}
+
+#modalText {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
 }
 
 .closeModal {

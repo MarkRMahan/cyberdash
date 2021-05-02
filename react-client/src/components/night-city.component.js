@@ -8,30 +8,57 @@ export default class NightCityMap extends Component {
 
   constructor(props) {
     super(props);
-    this.nightCityImgName = "NightCityPresentation";
-
-    this.state = {
-      nightcitypresentation: this.getImage(this.nightCityImgName),
-      watsondevelopment: this.getImage("WatsonDevelopment")
-    };
+    this.state = {};
   }
 
   componentDidMount() {
     this.setListeners()
+    this.setImage("NightCityPresentation");
   }
 
-  getImage(name) {
-    ImageDataService.getImgByName(name)
+  async getImage(name) {
+    return await ImageDataService.getImgByName(name)
       .then(response => {
         if (response[0].image.data) {
-          this.setState({
-            [name.toLowerCase()]: new Buffer(response[0].image.data).toString('base64')
-          });
+          return new Buffer(response[0].image.data).toString('base64');
         }
       })
       .catch(err => {
         console.log(`Error retrieving Night City img: ${err}`);
       });
+  }
+
+  setImage(name) {
+    this.getImage(name)
+      .then((img) => {
+          //console.log(`${name} IMG: ${img}`);
+          this.setState({
+            [name]: img
+          });
+      })
+      .catch(err => {
+        console.log(`Error setting img ${name}: ${err}`);
+      });
+  }
+
+  setModalImage(name, modalImg) {
+    this.getImage(name)
+      .then((img) => {
+          this.setState({
+            [name]: img
+          },
+          () => {
+            this.changeCurrentImg(name, modalImg);
+          });
+          console.log("Finished modal image");
+      })
+      .catch(err => {
+        console.log(`Error setting img ${name}: ${err}`);
+      });
+  }
+
+  changeCurrentImg(name, modalImg) {
+    modalImg.setAttribute("src", `data:image/png;base64,${this.state[name]}`)
   }
 
   logToConsole() {
@@ -49,14 +76,23 @@ export default class NightCityMap extends Component {
   setListeners() {
     const nightCityAreas = document.querySelectorAll("area");
 
-    const myModal = document.getElementById("testModal");
+    const myModal = document.getElementById("nightCityZoneModal");
     const closeModal = document.getElementsByClassName("closeModal")[0];
+    const modalImg = document.getElementById("modalImg");
 
     nightCityAreas.forEach((area) => {
+      let areaAlt = area.getAttribute('alt');
       area.addEventListener('click', (event) => {
         event.preventDefault();
-        console.log(`Target: ${area.getAttribute("alt")}`);
+        if (!this.state[areaAlt]) {
+          console.log(`Target: ${areaAlt}`);
+          this.setModalImage(areaAlt, modalImg);
+        } else {
+          this.changeCurrentImg(areaAlt, modalImg);
+        }
+        //this.setState({ currentImage: this.state[name] });
         myModal.style.display = "block";
+        console.log(JSON.stringify(this.state.currentImage));
       });
     });
 
@@ -66,17 +102,19 @@ export default class NightCityMap extends Component {
 
   }
 
+
+
   render() {
     return (
       <div className="h-100 nc-row">
-        <div id="testModal">
-          <img src={`data:image/png;base64,${this.state.watsondevelopment}`}/>
-          <span>THIS IS A TEST TO SEE THE MODAL</span>
+        <div id="nightCityZoneModal">
+          <img id="modalImg" src={`data:image/png;base64,${this.state.currentImage}`}/>
+          <span id="modalText">THIS IS A TEST TO SEE THE MODAL</span>
           <span className="closeModal">&times;</span>
         </div>
         <div className="nc-col img-container">
           <div id="night-city-container">
-            <img src={`data:image/png;base64,${this.state.nightcitypresentation}`} className="night-city-img" useMap="#nightcitymap"/>
+            <img src={`data:image/png;base64,${this.state.NightCityPresentation}`} className="night-city-img" useMap="#nightcitymap"/>
             <map name="nightcitymap">
               <area alt="ExecutiveZone" href="#" coords="568,280,583,271,589,260,611,260,631,285,631,315,626,329,611,340,595,340,568,307,568,280" shape="poly"/>
               <area alt="TheOpenRoad" href="#" coords="526,1,501,109,553,174,568,207,601,209,614,212,629,224,634,238,628,275,633,291,636,296,635,302,632,307,626,329,611,339,598,340,619,362,635,417,679,509,693,526,693,558,719,561,731,557,731,0" shape="poly"/>
