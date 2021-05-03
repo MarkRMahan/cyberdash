@@ -108,8 +108,8 @@ export default class NightCityMap extends Component {
     return (
       <div className="h-100 nc-row">
         <div id="nightCityZoneModal">
-          <img id="modalImg" src={`data:image/png;base64,${this.state.currentImage}`}/>
           <span id="modalText">THIS IS A TEST TO SEE THE MODAL</span>
+          <img id="modalImg" src={`data:image/png;base64,${this.state.currentImage}`}/>
           <span className="closeModal">&times;</span>
         </div>
         <div className="nc-col img-container">
@@ -137,7 +137,7 @@ export default class NightCityMap extends Component {
               <area alt="LittleEurope" href="#" coords="22,423,85,428,86,437,184,440,188,386,201,351,206,348,209,336,214,331,219,279,209,274,198,273,153,289,134,288,123,281,108,293,92,301,80,299,74,305,66,305,57,310,54,318,46,319,30,325,22,332,14,347,27,364,23,370,54,401,22,407" shape="poly"/>
               <area alt="OldBankBlock" href="#" coords="285,414,329,356,343,360,391,398,398,416" shape="poly"/>
               <area alt="OldMedicalCenter" href="#" coords="399,417,401,424,401,440,396,446,393,446,387,463,368,466,361,475,332,457,326,446,321,416" shape="poly"/>
-              <area alt="OldCorpCenter" href="#" coords="320,416,326,448,331,457,310,465,305,470,260,483,233,481,215,476,198,459,187,441,187,414" shape="poly"/>
+              <area alt="OldCorporateCenter" href="#" coords="320,416,326,448,331,457,310,465,305,470,260,483,233,481,215,476,198,459,187,441,187,414" shape="poly"/>
               <area alt="OldCityCenter" href="#" coords="187,413,283,414,329,356,314,343,308,326,282,325,276,319,232,319,210,337,208,347,202,352,189,387" shape="poly"/>          
             </map>
           </div>
