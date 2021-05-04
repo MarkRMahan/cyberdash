@@ -87,7 +87,15 @@ svg:not(:root) {
   transform: translate(-50%, -50%);
 }
 
+img.widthImg {
+  width: 100% !important;
+  height: auto !important;
+}
 
+img.heightImg {
+  width: auto !important;
+  height: 100% !important;
+}
 
 #modalText {
   position: absolute;

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ImageDataService from "../services/image.service";
-import ImageArea from './image-area.component';
 import '../nightcity.css';
 import ImageMapper from 'react-img-mapper';
 
@@ -8,7 +7,35 @@ export default class NightCityMap extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      widthImages: [
+        "HeywoodIndustrialZone",
+        "LittleChina",
+        "NewWestbrook",
+        "NorCalMilitaryBase",
+        "PacificaPlayground",
+        "RanchoCoronado",
+        "SantoDomingo",
+        "TheOpenRoad",
+        "UpperMarina",
+        "WatsonDevelopment"
+      ],
+      heightImages: [
+        "ExecutiveZone",
+        "MorroRock",
+        "LittleEurope",
+        "OldBankBlock",
+        "OldCityCenter",
+        "OldCombatZone",
+        "OldCorporateCenter",
+        "OldJapanTown",
+        "OldMedicalCenter",
+        "SouthNightCity",
+        "TheGlen",
+        "TheReclaimedPerimeter",
+        "UniversityDistrict"
+      ]
+    };
   }
 
   componentDidMount() {
@@ -90,7 +117,14 @@ export default class NightCityMap extends Component {
         } else {
           this.changeCurrentImg(areaAlt, modalImg);
         }
-        //this.setState({ currentImage: this.state[name] });
+        if (this.state.widthImages.includes(areaAlt)) {
+          console.log("entering width");
+          modalImg.setAttribute("class", "widthImg");
+        }
+        if (this.state.heightImages.includes(areaAlt)) {
+          console.log("entering height");
+          modalImg.setAttribute("class", "heightImg");
+        }
         myModal.style.display = "block";
         console.log(JSON.stringify(this.state.currentImage));
       });
@@ -109,7 +143,7 @@ export default class NightCityMap extends Component {
       <div className="h-100 nc-row">
         <div id="nightCityZoneModal">
           <span id="modalText">THIS IS A TEST TO SEE THE MODAL</span>
-          <img id="modalImg" src={`data:image/png;base64,${this.state.currentImage}`}/>
+          <img id="modalImg" className="" src={`data:image/png;base64,${this.state.currentImage}`}/>
           <span className="closeModal">&times;</span>
         </div>
         <div className="nc-col img-container">
