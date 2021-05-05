@@ -75,7 +75,6 @@ export default class NightCityMap extends Component {
           },
           () => {
             this.changeCurrentImg(name, modalImg);
-            this.moveModalText(modalImg);
           });
       })
       .catch(err => {
@@ -84,7 +83,8 @@ export default class NightCityMap extends Component {
   }
 
   changeCurrentImg(name, modalImg) {
-    modalImg.setAttribute("src", `data:image/png;base64,${this.state[name]}`)
+    modalImg.setAttribute("src", `data:image/png;base64,${this.state[name]}`);
+    modalImg.setAttribute("alt", name);
   }
 
   logToConsole() {
@@ -100,9 +100,18 @@ export default class NightCityMap extends Component {
   }
 
   moveModalText(img) {
-    let imgText = document.getElementById('modalText');
-    imgText.style.left = `${img.clientWidth - (img.clientWidth * 0.95)}px`;
-    imgText.style.bottom = `${img.clientHeight - (img.clientHeight * 0.85)}px`;
+    const imgText = document.getElementById('modalText');
+    const imgAlt = img.getAttribute("alt");
+    const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    const screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    if (this.state.widthImages.includes(imgAlt)) {
+      imgText.style.left = `30px`;
+      imgText.style.bottom = `${((screenHeight - img.height) / 2) + 25}px`;
+    }
+    if (this.state.heightImages.includes(imgAlt)) {
+      imgText.style.left = `${((screenWidth - img.width) / 2) + 30}px`;
+      imgText.style.bottom = `25px`;
+    }
   }
 
   setListeners() {
@@ -134,6 +143,11 @@ export default class NightCityMap extends Component {
     closeModal.addEventListener('click', (event) => {
       myModal.style.display = "none";
       modalImg.setAttribute("src", "");
+      modalImg.setAttribute("alt", "");
+    });
+
+    modalImg.addEventListener("load", (event) => {
+      this.moveModalText(modalImg);
     });
 
   }
@@ -148,7 +162,7 @@ export default class NightCityMap extends Component {
               <h1>Example Header</h1>
               <p>This is an example text box that goes over the bottom of the image. Seeing how to style it as well as trying to get it how I like it. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
-            <img id="modalImg" className="" src={`data:image/png;base64,${this.state.currentImage}`}/>
+            <img id="modalImg" alt="" src={`data:image/png;base64,${this.state.currentImage}`}/>
           </div>
           <span className="closeModal">&times;</span>
         </div>
