@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ImageDataService from "../services/image.service";
 import '../nightcity.css';
+import mapResizer from 'image-map-resizer';
 
 export default class NightCityMap extends Component {
 
@@ -10,7 +11,6 @@ export default class NightCityMap extends Component {
       undefined: undefined,
       widthImages: [
         "HeywoodIndustrialZone",
-        "LittleChina",
         "NewWestbrook",
         "NorCalMilitaryBase",
         "PacificaPlayground",
@@ -23,6 +23,7 @@ export default class NightCityMap extends Component {
       heightImages: [
         "ExecutiveZone",
         "MorroRock",
+        "LittleChina",
         "LittleEurope",
         "OldBankBlock",
         "OldCityCenter",
@@ -41,6 +42,7 @@ export default class NightCityMap extends Component {
   componentDidMount() {
     this.setListeners()
     this.setImage("NightCityPresentation");
+    mapResizer();
   }
 
   async getImage(name) {
@@ -120,6 +122,7 @@ export default class NightCityMap extends Component {
     const myModal = document.getElementById("nightCityZoneModal");
     const closeModal = document.getElementsByClassName("closeModal")[0];
     const modalImg = document.getElementById("modalImg");
+    const modalText = document.getElementById("modalText");
 
     nightCityAreas.forEach((area) => {
       let areaAlt = area.getAttribute('alt');
@@ -142,12 +145,14 @@ export default class NightCityMap extends Component {
 
     closeModal.addEventListener('click', (event) => {
       myModal.style.display = "none";
+      modalText.style.display = "none";
       modalImg.setAttribute("src", "");
       modalImg.setAttribute("alt", "");
     });
 
     modalImg.addEventListener("load", (event) => {
       this.moveModalText(modalImg);
+      modalText.style.display = "block";
     });
 
   }
