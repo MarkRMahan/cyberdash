@@ -49,7 +49,10 @@ export default class NightCityMap extends Component {
     return await ImageDataService.getImgByName(name)
       .then(response => {
         if (response[0].image.data) {
-          return new Buffer(response[0].image.data).toString('base64');
+          return { 
+            img: new Buffer(response[0].image.data).toString('base64'),
+            description: response[0].description
+          };
         }
       })
       .catch(err => {
@@ -59,9 +62,9 @@ export default class NightCityMap extends Component {
 
   setImage(name) {
     this.getImage(name)
-      .then((img) => {
+      .then((imgData) => {
           this.setState({
-            [name]: img
+            [name]: imgData.img
           });
       })
       .catch(err => {
@@ -71,9 +74,10 @@ export default class NightCityMap extends Component {
 
   setModalImage(name, modalImg) {
     this.getImage(name)
-      .then((img) => {
+      .then((imgData) => {
           this.setState({
-            [name]: img
+            [name]: imgData.img,
+            currentDescription: imgData.description
           },
           () => {
             this.changeCurrentImg(name, modalImg);
@@ -165,7 +169,7 @@ export default class NightCityMap extends Component {
           <div id="imageAndText">
             <div id="modalText">
               <h1>Example Header</h1>
-              <p>This is an example text box that goes over the bottom of the image. Seeing how to style it as well as trying to get it how I like it. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>{this.state.currentDescription}</p>
             </div>
             <img id="modalImg" alt="" src={`data:image/png;base64,${this.state.currentImage}`}/>
           </div>
