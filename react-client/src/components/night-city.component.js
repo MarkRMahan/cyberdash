@@ -77,7 +77,8 @@ export default class NightCityMap extends Component {
       .then((imgData) => {
           this.setState({
             [name]: imgData.img,
-            currentDescription: imgData.description
+            currentDescription: imgData.description,
+            modalHeader: this.createHeader(name)
           },
           () => {
             this.changeCurrentImg(name, modalImg);
@@ -103,6 +104,18 @@ export default class NightCityMap extends Component {
 
   logZoneName(zoneName) {
     console.log(zoneName);
+  }
+
+  createHeader(header) {
+    const splitHeader = header.split('');
+    let finalHeader = '';
+    for (let i = 0; i < splitHeader.length; i++) {
+      if (splitHeader[i] === splitHeader[i].toUpperCase() && finalHeader) {
+        finalHeader += ' ';
+      }
+      finalHeader += splitHeader[i];
+    }
+    return finalHeader;
   }
 
   moveModalText(img) {
@@ -168,7 +181,7 @@ export default class NightCityMap extends Component {
         <div id="nightCityZoneModal">
           <div id="imageAndText">
             <div id="modalText">
-              <h1>Example Header</h1>
+              <h1>{this.state.modalHeader}</h1>
               <p>{this.state.currentDescription}</p>
             </div>
             <img id="modalImg" alt="" src={`data:image/png;base64,${this.state.currentImage}`}/>
