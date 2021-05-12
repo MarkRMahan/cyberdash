@@ -120,10 +120,9 @@ ul {
   background: #181a1a;
 }
 
-.outer-nav-art {
+.outer-art {
   position: relative;
   display: flex;
-  background: #181a1a;
   max-width: 24px;
   min-width: 24px;
   height: 100%;

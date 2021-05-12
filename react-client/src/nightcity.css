@@ -1,5 +1,6 @@
 .night-city-img {
-  width: 100%;
+  width: auto;
+  height: 100%;
 }
 
 .img-container {
@@ -12,10 +13,15 @@
   z-index: -1;
   height: 100%;
   display: flex;
+  flex-flow: row;
 }
 
 .nc-col {
   position: relative;
+}
+
+.fill-col {
+  width: 100%;
 }
 
 .zone-hover-link {
@@ -29,15 +35,13 @@
 }
 
 svg:not(:root) {
-  width: 27px;
+  width: 100%;
   height: 100%;
   min-height: 100%;
   display: block;
   overflow: visible;
   position: absolute;
-}
-
-svg:not(:root) {
+  margin: auto;
   z-index: 3;
 }
 
@@ -114,4 +118,11 @@ img.heightImg {
   transition: 0.3s;
   z-index: 100;
   cursor: pointer;
+}
+
+.right-art {
+  position: relative;
+  display: flex;
+  margin-right: 4rem;
+  min-width: 54px;
 }

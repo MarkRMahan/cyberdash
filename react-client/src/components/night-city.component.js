@@ -218,8 +218,15 @@ export default class NightCityMap extends Component {
             </map>
           </div>
         </div>
-        <div  className="nc-col">
+        <div className="nc-col">
           Get this text on the right
+        </div>
+        <div className="nc-col fill-col">
+          <div className="outer-art right right-art">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 1055" preserveAspectRatio="xMinYMid slice">
+              <path d="M57.539 1047.184c.018.16-57.039 0-57.039 0V554.319l13.091-13.091v-359.6L.5 168.537V.5h57.039z" fill="none" stroke="#65c5cc"/>
+            </svg>
+          </div>
         </div>
       </div>
     );

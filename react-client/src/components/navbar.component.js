@@ -18,8 +18,8 @@ const NavBar = () => {
           </a>
         </li>
       </ul>
-      <div className="outer-nav-art rounded-top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="0.266667in" height="10.6667in" viewBox="0 0 24 960" preserveAspectRatio="xMinYMid slice">
+      <div className="outer-art rounded-top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 960" preserveAspectRatio="xMinYMid slice">
           <path id="Imported Path"
                 fill="#181a1a" stroke="#65c5cc" strokeWidth="1"
                 d="M 24.00,952.00
