@@ -37,17 +37,6 @@ svg:not(:root) {
   position: absolute;
 }
 
-.outer-nav-art {
-  position: relative;
-  background-color: #343a40;
-  display: flex;
-  max-width: 24px;
-  min-width: 24px;
-  height: 100%;
-  font-size: 0;
-  justify-content: space-between;
-}
-
 svg:not(:root) {
   z-index: 3;
 }
@@ -112,6 +101,7 @@ img.heightImg {
   white-space: normal;
   word-break: break-all;
   width: 40vw;
+  word-break: keep-all;
 }
 
 .closeModal {

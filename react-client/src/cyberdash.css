@@ -55,6 +55,8 @@ ul {
   flex-wrap: nowrap;
   align-items: center;
   padding-right: 0;
+  color: #b1dee2;
+  background: #181a1a;
 }
 
 .navbar > ul {
@@ -111,4 +113,20 @@ ul {
 
 .weapon-description {
   margin-top: 3rem;
+}
+
+.cybernav .navbar-brand {
+  color: #b3dfe2;
+  background: #181a1a;
+}
+
+.outer-nav-art {
+  position: relative;
+  display: flex;
+  background: #181a1a;
+  max-width: 24px;
+  min-width: 24px;
+  height: 100%;
+  font-size: 0;
+  justify-content: space-between;
 }
