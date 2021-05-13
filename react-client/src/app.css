@@ -1,6 +1,13 @@
 #top-div {
   width: 100%;
+  background: #181a1a;
+  border: solid #65c5cc 1px;
+  padding-left: 4rem;
   overflow: auto;
+}
+
+.background {
+  padding-top: 0.5rem;
 }
 
 .right {

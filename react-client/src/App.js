@@ -22,6 +22,13 @@ class App extends Component {
           <Route path="/nightcity" component={NightCityMap} />
           </Switch>
         </div> 
+        <div className="nc-col">
+          <div className="outer-art right right-art">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59 1040.5" preserveAspectRatio="xMinYMid slice">
+              <path d="M58.5 1022l-12.287 12H16.685l-5.747 6H.505V550.745l13.311-13.006V180.454L.505 167.448V.5h45.713l12.287 12z" fill="#181a1a" stroke="#65c5cc"/>
+            </svg>
+          </div>
+        </div>
       </div>
     );
   }

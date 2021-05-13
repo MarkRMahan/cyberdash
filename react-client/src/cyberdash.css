@@ -76,6 +76,7 @@ ul {
   width: 60rem;
   padding-right: 15px;
   padding-left: 15px;
+  padding-top: 1rem;
 }
 
 .tab-list {
@@ -123,9 +124,12 @@ ul {
 .outer-art {
   position: relative;
   display: flex;
-  max-width: 24px;
-  min-width: 24px;
   height: 100%;
   font-size: 0;
   justify-content: space-between;
+}
+
+.nav-art {
+  min-width: 150px;
+  margin-left: 0.5rem;
 }
