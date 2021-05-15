@@ -76,9 +76,9 @@ export default class NightCityMap extends Component {
     this.getImage(name)
       .then((imgData) => {
           this.setState({
-            [name]: imgData.img,
-            currentDescription: imgData.description,
-            modalHeader: this.createHeader(name)
+            [name]: imgData,
+            modalHeader: this.createHeader(name),
+            currentDescription: imgData.description
           },
           () => {
             this.changeCurrentImg(name, modalImg);
@@ -90,8 +90,14 @@ export default class NightCityMap extends Component {
   }
 
   changeCurrentImg(name, modalImg) {
-    modalImg.setAttribute("src", `data:image/png;base64,${this.state[name]}`);
-    modalImg.setAttribute("alt", name);
+    this.setState({
+      modalHeader: this.createHeader(name),
+      currentDescription: this.state[name].description
+    },
+    () => {
+      modalImg.setAttribute("src", `data:image/png;base64,${this.state[name].img}`);
+      modalImg.setAttribute("alt", name);
+    });
   }
 
   logToConsole() {
@@ -190,7 +196,7 @@ export default class NightCityMap extends Component {
         </div>
         <div className="nc-col img-container">
           <div id="night-city-container">
-            <img src={`data:image/png;base64,${this.state.NightCityPresentation}`} className="night-city-img" useMap="#nightcitymap"/>
+            <img src={`data:image/png;base64,${this.state.NightCityPresentation}`} id="night-city-img" useMap="#nightcitymap"/>
             <map name="nightcitymap">
               <area alt="ExecutiveZone" href="#" coords="568,280,583,271,589,260,611,260,631,285,631,315,626,329,611,340,595,340,568,307,568,280" shape="poly"/>
               <area alt="TheOpenRoad" href="#" coords="526,1,501,109,553,174,568,207,601,209,614,212,629,224,634,238,628,275,633,291,636,296,635,302,632,307,626,329,611,339,598,340,619,362,635,417,679,509,693,526,693,558,719,561,731,557,731,0" shape="poly"/>
@@ -218,8 +224,35 @@ export default class NightCityMap extends Component {
             </map>
           </div>
         </div>
-        <div className="nc-col">
-          Get this text on the right
+        <div className="nc-col container">
+          <div className="row">
+            <div className="col-md-12 nc-paragraph">
+              <h1 id="nc-header">
+                Welcome to Night City Punk
+              </h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+          <div className="row nc-paragraph">
+            <p>
+              Neque convallis a cras semper auctor neque vitae tempus. Faucibus purus in massa tempor nec feugiat nisl. Velit scelerisque in dictum non. Ornare suspendisse sed nisi lacus. Rhoncus urna neque viverra justo nec. Mauris in aliquam sem fringilla ut morbi. Dui accumsan sit amet nulla facilisi. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Vulputate enim nulla aliquet porttitor lacus luctus. Neque vitae tempus quam pellentesque nec nam aliquam. Malesuada fames ac turpis egestas integer eget aliquet nibh. Sit amet nulla facilisi morbi tempus iaculis urna id volutpat. Turpis massa sed elementum tempus egestas.
+            </p>
+          </div>
+          <div className="row nc-paragraph">
+            <div className="col-md-6 nc-col">
+              <div className="zone-type">
+                <div className="zone-threat-level">
+                  
+                </div>
+                Hello
+              </div>
+            </div>
+            <div className="col-md-6">
+              More stuff here
+            </div>
+          </div>
         </div>
       </div>
     );

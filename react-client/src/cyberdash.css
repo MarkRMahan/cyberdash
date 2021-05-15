@@ -56,7 +56,7 @@ ul {
   align-items: center;
   padding-right: 0;
   color: #b1dee2;
-  background: #181a1a;
+  background: var(--cyber-background-color);
 }
 
 .navbar > ul {
@@ -117,8 +117,8 @@ ul {
 }
 
 .cybernav .navbar-brand {
-  color: #b3dfe2;
-  background: #181a1a;
+  color: var(--cyber-text-color);
+  background: var(--cyber-background-color);
 }
 
 .outer-art {
@@ -130,6 +130,6 @@ ul {
 }
 
 .nav-art {
-  min-width: 150px;
+  min-width: 8vw;
   margin-left: 0.5rem;
 }
