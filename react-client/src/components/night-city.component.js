@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ImageDataService from "../services/image.service";
 import '../nightcity.css';
 import mapResizer from 'image-map-resizer';
+import ZoneType from './zone-type.component.js'
 
 export default class NightCityMap extends Component {
 
@@ -226,12 +227,12 @@ export default class NightCityMap extends Component {
         </div>
         <div className="nc-col container">
           <div className="row">
-            <div className="col-md-12 nc-paragraph">
+            <div className="nc-paragraph">
               <h1 id="nc-header">
                 Welcome to Night City Punk
               </h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Neque convallis a cras semper auctor neque vitae tempus. Faucibus purus in massa tempor nec feugiat nisl. Velit scelerisque in dictum non. Ornare suspendisse sed nisi lacus. Rhoncus urna neque viverra justo nec. Mauris in aliquam sem fringilla ut morbi. Dui accumsan sit amet nulla facilisi. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Vulputate enim nulla aliquet porttitor lacus luctus. Neque vitae tempus quam pellentesque nec nam aliquam. Malesuada fames ac turpis egestas integer eget aliquet nibh. Sit amet nulla facilisi morbi tempus iaculis urna id volutpat. Turpis massa sed elementum tempus egestas.
               </p>
             </div>
           </div>
@@ -242,15 +243,26 @@ export default class NightCityMap extends Component {
           </div>
           <div className="row nc-paragraph">
             <div className="col-md-6 nc-col">
-              <div className="zone-type">
-                <div className="zone-threat-level">
-                  
-                </div>
-                Hello
-              </div>
+              <ZoneType zoneText="Testing out zone"/>
             </div>
             <div className="col-md-6">
-              More stuff here
+              <ZoneType zoneText="Testing out zone"/>
+            </div>
+          </div>
+          <div className="row nc-paragraph">
+            <div className="col-md-6 nc-col">
+              <ZoneType zoneText="Testing out zone"/>
+            </div>
+            <div className="col-md-6">
+              <ZoneType zoneText="Testing out zone"/>
+            </div>
+          </div>
+          <div className="row nc-paragraph">
+            <div className="col-md-6 nc-col">
+              <ZoneType zoneText="Testing out zone"/>
+            </div>
+            <div className="col-md-6">
+              <ZoneType zoneText="Testing out zone"/>
             </div>
           </div>
         </div>
