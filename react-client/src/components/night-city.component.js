@@ -229,7 +229,7 @@ export default class NightCityMap extends Component {
           <div className="row">
             <div className="nc-paragraph">
               <h1 id="nc-header">
-                Welcome to Night City Punk
+                Welcome to Night City <i>Punk</i>
               </h1>
               <p>
                 Neque convallis a cras semper auctor neque vitae tempus. Faucibus purus in massa tempor nec feugiat nisl. Velit scelerisque in dictum non. Ornare suspendisse sed nisi lacus. Rhoncus urna neque viverra justo nec. Mauris in aliquam sem fringilla ut morbi. Dui accumsan sit amet nulla facilisi. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Vulputate enim nulla aliquet porttitor lacus luctus. Neque vitae tempus quam pellentesque nec nam aliquam. Malesuada fames ac turpis egestas integer eget aliquet nibh. Sit amet nulla facilisi morbi tempus iaculis urna id volutpat. Turpis massa sed elementum tempus egestas.
