@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Play&display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow&display=swap'); */
+
+html, body, #root {
+  margin: 0;
+  height: 100%;
+  background-color:black
+}
+
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      background-size: auto, auto; */
+  z-index: 2;
+  background-size: 100% 1px, 2px 100%;
+  pointer-events: none;
+}
+
+.background {
+  background-color: #131516;
+  color: #b1dee2;
+  display: flex;
+  height: 100%;
+}
+
+.weapon-info {
+  border: 1px solid rgb(177, 222, 226);
+  margin: 1.6rem;
+}
+
+/* linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); */
+
+* {
+  font-family: "Play";
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.cybernav.navbar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-right: 0;
+  color: #b1dee2;
+  background: var(--cyber-background-color);
+}
+
+.navbar > ul {
+  display: inline-block;
+}
+
+.navbar li {
+  text-align: center;
+}
+
+.navbar li a {
+  margin: 1rem;
+}
+
+.main-page {
+  overflow: auto;
+  width: 60rem;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 1rem;
+}
+
+.tab-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+}
+
+.tab-list-active {
+  background-color: white;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
+}
+
+.card.weapon-card {
+  color: rgb(177, 222, 226);
+  /* background: linear-gradient(to bottom, rgba(43,237,230,0.1) 0%, rgba(43,237,230,0.2) 100%); */
+  background-color: #131516;
+  border: 1px solid rgb(177, 222, 226);
+}
+
+.btn.weapon-btn {
+  color: rgb(177, 222, 226);
+}
+
+.weapon-row {
+  margin: 0rem 2rem 1rem 2rem;
+}
+
+.weapon-description {
+  margin-top: 3rem;
+}
+
+.cybernav .navbar-brand {
+  color: var(--cyber-text-color);
+  background: var(--cyber-background-color);
+}
+
+.outer-art {
+  position: relative;
+  display: flex;
+  height: 100%;
+  font-size: 0;
+  justify-content: space-between;
+}
+
+.nav-art {
+  min-width: 8vw;
+  margin-left: 0.5rem;
+}

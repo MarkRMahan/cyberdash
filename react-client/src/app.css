@@ -1,0 +1,22 @@
+:root {
+  --cyber-blue-border: #65c5cc;
+  --cyber-background-color: #181a1a;
+  --cyber-text-color: #b3dfe2;
+}
+
+#top-div {
+  width: 100%;
+  background: #181a1a;
+  border: solid var(--cyber-blue-border) 1px;
+  padding-left: 4rem;
+  overflow: auto;
+}
+
+.background {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.right {
+  float: right;
+}
