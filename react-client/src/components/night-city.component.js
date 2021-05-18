@@ -237,32 +237,32 @@ export default class NightCityMap extends Component {
             </div>
           </div>
           <div className="row nc-paragraph">
-            <p>
-              Neque convallis a cras semper auctor neque vitae tempus. Faucibus purus in massa tempor nec feugiat nisl. Velit scelerisque in dictum non. Ornare suspendisse sed nisi lacus. Rhoncus urna neque viverra justo nec. Mauris in aliquam sem fringilla ut morbi. Dui accumsan sit amet nulla facilisi. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Vulputate enim nulla aliquet porttitor lacus luctus. Neque vitae tempus quam pellentesque nec nam aliquam. Malesuada fames ac turpis egestas integer eget aliquet nibh. Sit amet nulla facilisi morbi tempus iaculis urna id volutpat. Turpis massa sed elementum tempus egestas.
+            <p id="zoneDescription">
+              Think you got what it takes Choom?
             </p>
           </div>
           <div className="row nc-paragraph">
             <div className="col-md-6 nc-col">
-              <ZoneType zoneText=" This is a special area of the City that has been cordoned off and gated for the use of High-Level Corporate executives and their families only." zoneColor="blue"/>
+              <ZoneType zoneColor="blue" zoneHeader="Executive Zone" zoneText="This is a special area of the City that has been cordoned off and gated for the use of High-Level Corporate executives and their families only."/>
             </div>
             <div className="col-md-6">
-              <ZoneType zoneText="These are parts of the city that escaped the worst of both the War and the bomb. In the Rebuilding Center, cranes and construction gear are everywhere, building new Corporate towers and crowded urban megabuildings." zoneColor="green"/>
+              <ZoneType zoneColor="green" zoneHeader="Rebuilding Urban Center" zoneText="These are parts of the city that escaped the worst of both the War and the bomb. In the Rebuilding Center, cranes and construction gear are everywhere, building new Corporate towers and crowded urban megabuildings."/>
             </div>
           </div>
           <div className="row nc-paragraph">
             <div className="col-md-6 nc-col">
-              <ZoneType zoneText='Now filled with sprawling tent cities and unregulated refugee camps crammed with the displaced of the War, this is a place on the edge of disaster, where once safe and secure "Beavervilles" stood.' zoneColor="orange"/>
+              <ZoneType zoneColor="orange" zoneHeader="Overpacked Suburbs" zoneText='Now filled with sprawling tent cities and unregulated refugee camps crammed with the displaced of the War, this is a place on the edge of disaster, where once safe and secure "Beavervilles" stood.'/>
             </div>
             <div className="col-md-6">
-              <ZoneType zoneText="The most dangerous and lawless part of the city which grew out of the original Combat Zone in the wake of the 4th Corporate War. The only justice here comes from the barrel of a gun." zoneColor="red"/>
+              <ZoneType zoneColor="red" zoneHeader="Combat Zone" zoneText="The most dangerous and lawless part of the city which grew out of the original Combat Zone in the wake of the 4th Corporate War. The only justice here comes from the barrel of a gun."/>
             </div>
           </div>
           <div className="row nc-paragraph">
             <div className="col-md-6 nc-col">
-              <ZoneType zoneText="The area most affected by the Night City Nuke, this is a blasted terrain full of wrecked, twisted skyscrapers, burned-out vehicles, and entombed bodies of the unlucky." zoneColor="black"/>
+              <ZoneType zoneColor="black" zoneHeader="Hot Zone" zoneText="The area most affected by the Night City Nuke, this is a blasted terrain full of wrecked, twisted skyscrapers, burned-out vehicles, and entombed bodies of the unlucky."/>
             </div>
             <div className="col-md-6">
-              <ZoneType zoneText="The area just outside the City's sprawl is known as The Reclaimed Perimeter. It sits on the edge of lawlessness, save for the areas controlled by the Nomad Families. Beyond that is The Open Road, a highway populated only by people in transit or roving boostergangs on spiky ground cars and motorcycles." zoneColor="white"/>
+              <ZoneType zoneColor="white" zoneHeader="Outskirts &amp; Beyond" zoneText="The area just outside the City's sprawl is known as The Reclaimed Perimeter. It sits on the edge of lawlessness, save for the areas controlled by the Nomad Families. Beyond that is The Open Road, a highway populated only by people in transit or roving boostergangs on spiky ground cars and motorcycles."/>
             </div>
           </div>
         </div>

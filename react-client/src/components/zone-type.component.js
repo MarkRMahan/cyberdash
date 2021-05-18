@@ -12,13 +12,23 @@ export default class ZoneType extends Component {
       black: "rgb(0,0,0)",
       white: "rgb(255,255,255)"
     };
+
+  }
+
+  componentDidMount() {
+    const zone = document.querySelector(`.zone-type-${this.props.zoneColor}`);
+    const pageZoneDesc = document.getElementById("zoneDescription");
+    zone.addEventListener("click", (event) => {
+      console.log(this.props.zoneColor);
+      pageZoneDesc.innerHTML = this.props.zoneText;
+    });
   }
 
   render() {
     return (
-      <div className="zone-type">
+      <div className={`zone-type zone-type-${this.props.zoneColor}`}>
         <div className=" zone-threat-level" style={{background: this.state[this.props.zoneColor]}}></div>
-        <span>{this.props.zoneText}</span>
+        <span>{this.props.zoneHeader}</span>
       </div>
     );
   }

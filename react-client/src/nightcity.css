@@ -72,7 +72,8 @@ svg:not(:root) {
 .zone-type > span {
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 13px;
+  font-size: 22px;
+  margin: auto 1rem auto 1rem;
 }
 
 .zone-type:before {
