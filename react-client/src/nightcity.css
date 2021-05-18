@@ -65,29 +65,47 @@ svg:not(:root) {
   display: flex;
   justify-content: left;
   width: 100%;
-  height: 5rem;
+  height: 6rem;
   border: 1px solid var(--cyber-blue-border);
+}
+
+.zone-type > span {
   overflow: hidden;
-  background: transparent;
+  text-overflow: ellipsis;
+  font-size: 13px;
 }
 
 .zone-type:before {
-  content: "";
   position:absolute;
-  margin-right: -12px;
-  margin-bottom: -12px;
-  right: 0;
-  bottom: 0;
+  content: "";
+  display: block;
+  right: -1px;
+  bottom: -1px;
   width: 24px;
   height: 24px;
-  transform: rotate(45deg);
-  box-shadow: 0 0 0 50px var(--cyber-background-color);
-  background-color: var(--cyber-blue-border);
+  background: linear-gradient(to left top, var(--cyber-blue-border) 50%, transparent 50%), linear-gradient(to left top, #6789ab 50%, transparent 50%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: left top, -1px 0px;
+}
+
+.zone-type:after {
+  position:absolute;
+  content: "";
+  display: block;
+  right: -4px;
+  bottom: -4px;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(to left top, var(--cyber-background-color) 50%, transparent 50%), linear-gradient(to left top, var(--cyber-background-color) 50%, transparent 50%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: left top, -1px 0px;
 }
 
 .zone-threat-level {
   display: inline-block;
-  width: 2rem;
+  min-width: 2.5rem;
   height: auto;
   background-color: red;
   margin: 0.5rem;

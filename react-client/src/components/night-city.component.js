@@ -226,8 +226,8 @@ export default class NightCityMap extends Component {
           </div>
         </div>
         <div className="nc-col container">
-          <div className="row">
-            <div className="nc-paragraph">
+          <div className="row nc-paragraph">
+            <div className="">
               <h1 id="nc-header">
                 Welcome to Night City <i>Punk</i>
               </h1>
@@ -243,26 +243,26 @@ export default class NightCityMap extends Component {
           </div>
           <div className="row nc-paragraph">
             <div className="col-md-6 nc-col">
-              <ZoneType zoneText="Testing out zone"/>
+              <ZoneType zoneText=" This is a special area of the City that has been cordoned off and gated for the use of High-Level Corporate executives and their families only." zoneColor="blue"/>
             </div>
             <div className="col-md-6">
-              <ZoneType zoneText="Testing out zone"/>
+              <ZoneType zoneText="These are parts of the city that escaped the worst of both the War and the bomb. In the Rebuilding Center, cranes and construction gear are everywhere, building new Corporate towers and crowded urban megabuildings." zoneColor="green"/>
             </div>
           </div>
           <div className="row nc-paragraph">
             <div className="col-md-6 nc-col">
-              <ZoneType zoneText="Testing out zone"/>
+              <ZoneType zoneText='Now filled with sprawling tent cities and unregulated refugee camps crammed with the displaced of the War, this is a place on the edge of disaster, where once safe and secure "Beavervilles" stood.' zoneColor="orange"/>
             </div>
             <div className="col-md-6">
-              <ZoneType zoneText="Testing out zone"/>
+              <ZoneType zoneText="The most dangerous and lawless part of the city which grew out of the original Combat Zone in the wake of the 4th Corporate War. The only justice here comes from the barrel of a gun." zoneColor="red"/>
             </div>
           </div>
           <div className="row nc-paragraph">
             <div className="col-md-6 nc-col">
-              <ZoneType zoneText="Testing out zone"/>
+              <ZoneType zoneText="The area most affected by the Night City Nuke, this is a blasted terrain full of wrecked, twisted skyscrapers, burned-out vehicles, and entombed bodies of the unlucky." zoneColor="black"/>
             </div>
             <div className="col-md-6">
-              <ZoneType zoneText="Testing out zone"/>
+              <ZoneType zoneText="The area just outside the City's sprawl is known as The Reclaimed Perimeter. It sits on the edge of lawlessness, save for the areas controlled by the Nomad Families. Beyond that is The Open Road, a highway populated only by people in transit or roving boostergangs on spiky ground cars and motorcycles." zoneColor="white"/>
             </div>
           </div>
         </div>
