@@ -18,7 +18,7 @@
       "webRoot": "${workspaceFolder}/react-client",
       "type": "firefox",
       "request": "launch",
-      "url": "http://localhost:5000"
+      "url": "http://localhost:5555"
     }
   ]
 }

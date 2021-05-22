@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 
 console.log(JSON.stringify(process.env));
-const originalUrl = `http://localhost:8081/api`;
+const originalUrl = `http://${process.env.REACT_APP_HOST_IP}:8081/api`;
 
 export default async function getData(additionalUrl = '', data) {
   // Default options are marked with *

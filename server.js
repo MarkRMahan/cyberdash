@@ -1,13 +1,24 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const ip = require("ip");
 const db = require("./app/models");
 
 const app = express();
 
-var corsOptions = {
+// 2560 x 1600
+
+const allowedOrigins = [`http://${ip.address()}:5000`, "http://localhost:5000"];
+
+const corsOptions = {
   methods: 'GET, POST, PATCH, DELETE, OPTIONS',
-  origin: `http://localhost:5000`
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Source not allowed by CORS'));
+    }
+  }
 };
 
 app.use(cors(corsOptions));
@@ -41,6 +52,6 @@ require("./app/routes/image.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8081;
-app.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, `${process.env.REACT_APP_HOST_IP}`, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
