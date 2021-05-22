@@ -106,7 +106,6 @@ exports.findWeaponByName = (req, res) => {
       if (!data) {
         res.status(404).send({ message: `No weapons found`});
       } else {
-        console.log("Sending data");
         res.send(data);
       }
     })
@@ -123,7 +122,6 @@ exports.getRandomWeapon = (req, res) => {
       if (!data) {
         res.status(404).send({ message: `No weapons found.  Are there weapons in the DB?`});
       } else {
-        console.log("Random weapon found");
         res.send(data);
       }
     })

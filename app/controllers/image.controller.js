@@ -2,7 +2,6 @@ const db = require("../models");
 const Image = db.images;
 
 exports.createImg = (req, res) => {
-  console.log("Entered create image");
   if (!req.body.image) {
     res.status(400).send({ message: "Image connot be empty"});
   }

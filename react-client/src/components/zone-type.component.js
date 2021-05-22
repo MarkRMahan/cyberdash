@@ -19,7 +19,6 @@ export default class ZoneType extends Component {
     const zone = document.querySelector(`.zone-type-${this.props.zoneColor}`);
     const pageZoneDesc = document.getElementById("zoneDescription");
     zone.addEventListener("click", (event) => {
-      console.log(this.props.zoneColor);
       pageZoneDesc.innerHTML = this.props.zoneText;
     });
   }

@@ -1,6 +1,7 @@
 import fetch from "node-fetch";
 
-const originalUrl = 'http://localhost:8081/api'
+console.log(JSON.stringify(process.env));
+const originalUrl = `http://localhost:8081/api`;
 
 export default async function getData(additionalUrl = '', data) {
   // Default options are marked with *

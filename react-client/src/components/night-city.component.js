@@ -109,10 +109,6 @@ export default class NightCityMap extends Component {
     return btoa(String.fromCharCode.apply(null, str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
   }
 
-  logZoneName(zoneName) {
-    console.log(zoneName);
-  }
-
   createHeader(header) {
     const splitHeader = header.split('');
     let finalHeader = '';
@@ -184,7 +180,7 @@ export default class NightCityMap extends Component {
 
   render() {
     return (
-      <div className="h-100 nc-row">
+      <div className="h-100 nc-row night-city-component">
         <div id="nightCityZoneModal">
           <div id="imageAndText">
             <div id="modalText">
@@ -235,18 +231,18 @@ export default class NightCityMap extends Component {
                 Night City, also known as the "City of Dreams", was established at the head of Del Coronado Bay, California in 1994 by a man with a vision, Richard Night. It was originally known as Coronado City long before it became the "city-state" that it is today.
               </p>
               <p>
-                Night City has a variety of different zones and buildings across the city. From its dense urban skyscrapers and crowded suburbs, to the lawless outskirts bordering the desert, this city is home to five million people in the year 2045.
+                Night City has a variety of different zones and buildings across its coast. From its dense urban skyscrapers and crowded suburbs, to the lawless outskirts bordering the desert, this city is home to five million people in the year 2045.
                 This metropolis is considered a thrilling and exciting location to visit, as well as an interesting and vibrant place to live for those with the means to do so, and a hellscape to the city's disenfranchised who don't.
               </p>
               <p>
-                Here you can interact with a map of the city to get an idea of just what you're working with, or maybe what you're up against. Click on any of the Districts on the map to get a closer look at them. They don't contain any ICE. Promise.
+                Here you can interact with a map of the city to get an idea of just what you're working with, or maybe what you're up against. Click on any of the Districts on the map to get a closer look at them. They don't contain any Black ICE. Promise.
               </p>
             </div>
           </div>
-          <div className="row nc-paragraph">
-            <p id="zoneDescription">
-              Think you got what it takes Choom? Go ahead and select a Zone below to get a brief description of the different Zones found throughout Night City.
-            </p>
+          <div className="row nc-paragraph description-container">
+            <span id="zoneDescription">
+              Think you got what it takes Choom? Go ahead and select a Zone below to get a brief description of the different areas found in Night City.
+            </span>
           </div>
           <div className="">
             <div className="row nc-paragraph zone-row">

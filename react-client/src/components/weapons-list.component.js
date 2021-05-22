@@ -50,14 +50,10 @@ export default class WeaponsList extends Component {
   searchName() {
     WeaponDataService.findByName(this.state.searchName)
       .then(response => {
-        // for (let weaponKey in response) {
-        //   console.log(`wList retrieved: ${JSON.stringify(response[weaponKey], null, 4)}`);
-        // }
         if (response.length) {
           this.setState({
             weapons: response
           });
-          //console.log(JSON.stringify(this.state.weapons, null, 4));
         }
       })
       .catch(e => {
@@ -68,7 +64,6 @@ export default class WeaponsList extends Component {
   randomWeapon() {
     WeaponDataService.getRandomWeapon()
       .then(response => {
-        console.log(response);
         this.setState({
           weapons: [
             ...response,
