@@ -191,7 +191,7 @@ export default class NightCityMap extends Component {
           </div>
           <span className="closeModal">&times;</span>
         </div>
-        <div className="nc-col img-container">
+        <div className="img-container">
           <div id="night-city-container">
             <img src={`data:image/png;base64,${this.state.NightCityPresentation}`} id="night-city-img" useMap="#nightcitymap"/>
             <map name="nightcitymap">
