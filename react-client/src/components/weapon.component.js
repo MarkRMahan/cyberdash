@@ -100,21 +100,6 @@ export default class Weapon extends Component {
     });
   }
 
-  // name: "",
-  // description: "",
-  // nationality: "",
-  // type: "",
-  // damage: "",
-  // rof: 0,
-  // magazine: 0,
-  // skill: "",
-  // concealable: false,
-  // attachments: "",
-  // hands: 0,
-  // cost: 0,
-  // quality: "",
-  // body_min: 0
-
   render() {
     const { currentWeapon } = this.state;
     const hyphenName = this.props.weapons.name.replaceAll(/[ ]|[!$%^&*()_+|~={}\[\]:";'<>?,.\/]/g, "-");

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/js/dist/collapse";
 import "./app.css";
@@ -7,6 +7,7 @@ import "./app.css";
 import WeaponsList from "./components/weapons-list.component";
 import NavBar from "./components/navbar.component";
 import NightCityMap from "./components/night-city.component";
+import BodyCountLottery from "./components/body-count-lottery.component";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route exact path={["/", "/weapons"]} component={WeaponsList} />
           <Route path="/weapons" component={WeaponsList} />
           <Route path="/nightcity" component={NightCityMap} />
+          <Route path="/lottery" component={BodyCountLottery} />
           </Switch>
         </div> 
         <div className="nc-col">

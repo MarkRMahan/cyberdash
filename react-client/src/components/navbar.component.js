@@ -21,6 +21,11 @@ const NavBar = () => {
                   Night City
                 </a>
               </li>
+              <li className="nav-item">
+                <a href="/lottery" className="navbar-brand nav-option">
+                  Body Lotto
+                </a>
+              </li>
             </ul>
           </nav>
         </foreignObject>
