@@ -221,7 +221,7 @@ export default class NightCityMap extends Component {
             </map>
           </div>
         </div>
-        <div>
+        <div id="nc-information">
           <div className="row nc-paragraph">
             <div className="">
               <h1 id="nc-header">

@@ -6,7 +6,9 @@ const db = require("./app/models");
 
 const app = express();
 
+// 1920 x 955
 // 2560 x 1600
+// 1280 x 595
 
 const allowedOrigins = [`http://${ip.address()}:5000`, "http://localhost:5000"];
 

@@ -23,13 +23,6 @@ body::before {
   pointer-events: none;
 }
 
-.background {
-  background-color: #131516;
-  color: #b1dee2;
-  display: flex;
-  height: 100%;
-}
-
 .weapon-info {
   border: 1px solid rgb(177, 222, 226);
   margin: 1.6rem;
@@ -130,6 +123,21 @@ ul {
 }
 
 .nav-art {
-  min-width: 8vw;
+  min-width: 7vw;
   margin-left: 0.5rem;
+}
+
+.lotto-ticket {
+  display: flex;
+  flex-wrap: nowrap;
+  border: solid 1px var(--cyber-blue-border);
+  justify-content: space-evenly;
+}
+
+.lotto-ticket-nums {
+  text-align: center;
+  font-size: 3rem;
+  height: 100px;
+  border: solid 1px var(--cyber-blue-border);
+  margin: 2rem;
 }
